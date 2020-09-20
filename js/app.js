@@ -29,4 +29,17 @@ $(document).ready(function() {
         // with the current method's arguments as an Array
         return jQueryOriginalVal.apply(this, Array.from(arguments));
     };
+
+    /**
+     * Refresh an element
+     * (Custom jQuery method)
+     *
+     * @returns {void}
+     * @public
+     */
+    $.fn.refresh = function() {
+        $(this).html(
+            $(this).clone()
+        );
+    };
 });
