@@ -68,3 +68,28 @@ $(document).ready(function() {
         });
     };
 });
+
+/**
+ * Toggle password on button click
+ *
+ * @param   {string} btnId
+ * @param   {string} pwdFieldId
+ * @returns {void}
+ * @public
+ */
+function togglePassword(btnId, pwdFieldId)
+{
+    $('#' + btnId).click(function() {
+        const fieldSelector = ('#' + pwdFieldId);
+
+        // If the field has the type "password", change it to "text"
+        let type = $(fieldSelector).prop('type');
+        if ('password' === type) {
+            $(fieldSelector).prop('type', 'text');
+        }
+        // Otherwise change it back to "password"
+        else if ('text' === type) {
+            $(fieldSelector).prop('type', 'password');
+        }
+    });
+}
