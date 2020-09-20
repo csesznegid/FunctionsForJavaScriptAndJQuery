@@ -108,3 +108,39 @@ function iSolemnlySwearThatIAmUpToNoGood()
     .then(alert('are proud to present'))
     .then(alert("THE MARAUDER'S MAP"));
 }
+
+/**
+ * Base options
+ *
+ * @type    {object|{width: string, language: string}}
+ * @returns {void}
+ * @public
+ */
+let dropdownOptions = {
+    width:    '100%',
+    language: 'hu',
+};
+
+/**
+ * Creates a new object without changing the default one(s)
+ *
+ * It will contain everything from the original object
+ * and adds properties of the new one(s)
+ *
+ * Note:
+ * Order matters!
+ * Don't start an assign() with the original object
+ * on the top of the list if you don't want to change it
+ *
+ * @param   {object} additionalOptionsObj
+ * @returns {object}
+ * @public
+ */
+function appendDropdownOptions(additionalOptionsObj)
+{
+    return Object.assign(
+        {},
+        additionalOptionsObj,
+        dropdownOptions
+    );
+}
