@@ -42,4 +42,29 @@ $(document).ready(function() {
             $(this).clone()
         );
     };
+
+    /**
+     * Forces a field to only accept numeric values
+     * (Custom jQuery method)
+     *
+     * @returns {void}
+     * @public
+     */
+    $.fn.numericField = function() {
+        // Store current scope's "this" in the variable "that"
+        // (some developers like to use the variable name "$this" for such purpose)
+        let that = this;
+
+        // KeyUp event
+        $(that).keyup(function() {
+            // Set HTML pattern property to only accept numeric values
+            // (only creates a red border if the rule is broken)
+            $(that).prop('pattern', '\\d*');
+
+            // Replace/remove all non-numeric characters in the field's value
+            $(that).val(
+                $(that).val().replace(/[^0-9]/g, '')
+            );
+        });
+    };
 });
