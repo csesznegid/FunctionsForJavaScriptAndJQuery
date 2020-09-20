@@ -93,3 +93,18 @@ function togglePassword(btnId, pwdFieldId)
         }
     });
 }
+
+/**
+ * Promises are everywhere:
+ * In JavaScript/jQuery and in Harry Potter as well :)
+ *
+ * @returns {void}
+ * @public
+ */
+function iSolemnlySwearThatIAmUpToNoGood()
+{
+    $.when(alert('Messrs Moony, Wormtail, Padfoot, and Prongs')) // Returns a "Promise" object
+    .then(alert('Purveyors of Aids to Magical Mischief-Makers'))
+    .then(alert('are proud to present'))
+    .then(alert("THE MARAUDER'S MAP"));
+}
